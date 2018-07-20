@@ -11,7 +11,7 @@ module.exports = function override(config, env) {
     //style: 'css',
     style: true, // use less for customized theme
   }], config);
-  
+
   // customize theme
   config.module.rules[1].oneOf.unshift(
     {
@@ -52,7 +52,7 @@ module.exports = function override(config, env) {
       ]
     }
   );
-  
+
   // css-modules
   config.module.rules[1].oneOf.unshift(
     {
@@ -91,10 +91,10 @@ module.exports = function override(config, env) {
       ]
     }
   );
-  
+
   // file-loader exclude
   let l = getLoader(config.module.rules, fileLoaderMatcher);
   l.exclude.push(/\.less$/);
-  
+
   return config;
 };
